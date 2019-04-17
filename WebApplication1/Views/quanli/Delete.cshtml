@@ -1,0 +1,48 @@
+﻿@model WebApplication1.Controllers.Quanlichitieu
+
+@{
+    ViewBag.Title = "Xóa";
+}
+
+<h2>Xóa</h2>
+
+<h3>Bạn chắc chắn muốn xóa?</h3>
+<div>
+    <h4>Quản lí chi tiêu</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Ngày
+        </dt>
+
+        <dd>
+            @Model.Date.Value
+        </dd>
+
+        <dt>
+            Số tiền
+        </dt>
+
+        <dd>
+            @Model.Total.Value
+        </dd>
+
+        <dt>
+            Ghi chú
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Detail)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xóa" class="btn btn-default" /> |
+            @Html.ActionLink("Trở về", "Index")
+        </div>
+    }
+</div>

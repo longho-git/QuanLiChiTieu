@@ -1,0 +1,44 @@
+﻿@model WebApplication1.Controllers.Quanlichitieu
+
+@{
+    ViewBag.Title = "Chi tiết";
+}
+
+<h2>Chi tiết</h2>
+
+<div>
+    <h4>Quản lí chi tiêu</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Ngày
+        </dt>
+
+        <dd>
+            @Model.Date.Value
+        </dd>
+
+        <dt>
+            Số tiền
+        </dt>
+
+        <dd>
+            @Model.Total.Value
+        </dd>
+
+        <dt>
+            Ghi chú
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Detail)
+        </dd>
+
+    </dl>
+    <p>
+        @Html.ActionLink("Sửa", "Edit", new { id = Model.id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+
+</div>
+
